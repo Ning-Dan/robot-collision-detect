@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.14)
+find_package(Eigen3 REQUIRED)
+find_package(FCL REQUIRED)
+add_executable(use_fcl main.cpp)
+target_link_libraries(use_fcl fcl Eigen3::Eigen)
+target_include_directories(use_fcl PUBLIC ${EIGEN3_INCLUDE_DIRS} ${FCL_INCLUDE_DIRS})
