@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="model" command="$(find xacro)/xacro --inorder '$(find abb_1660id_urdf_display_pkg)/urdf/irb1660id.xacro'" />
+  <param name="robot_description" command="$(arg model)"/>
+
+</launch>

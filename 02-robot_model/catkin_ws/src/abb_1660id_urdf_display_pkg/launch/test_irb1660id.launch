@@ -1,0 +1,10 @@
+<launch>
+  <!-- <include file="$(find abb_irb1660id_support)/launch/load_irb1660id.launch" />
+   -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find abb_1660id_urdf_display_pkg)/urdf/irb1660id.xacro'" />
+  <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+    </node>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="map_pub" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 map base_link 100"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find abb_1660id_urdf_display_pkg)/config/abb_irb1660id.rviz" required="true" />
+</launch>
